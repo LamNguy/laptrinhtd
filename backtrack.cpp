@@ -1,6 +1,6 @@
 #include <iostream>
 
-// list permutation
+// list permutation, O(n*n!)
 
 int n;
 bool used[100];
