@@ -1,0 +1,63 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct pine{
+    int start;
+    int end;
+    int start_index 
+    int end_index
+};
+
+// 1 if a < b
+// 0 if a > b 
+ 
+bool compare_pine( pine a , pine b ){
+    if (a.start <= b.start )
+        return a.end <= b.end;
+
+    return 0 ; 
+}   
+
+
+// 2N + M diem +1 L , -1 R , 0 la diem phai xet
+
+
+
+int N, M ;
+// N so doan thang
+// M so diem 
+
+int main(){
+
+    cin >> N >> M ;
+    int point[M];
+    pine arr[N];
+
+    for ( int i = 0 ; i < N ; i++ ){
+        int a, b;
+        cin >> a >> b ;
+        int start ,  end ;
+        if (a < b ){
+            start = a;
+            end = b;
+        } else {
+            start =b ;
+            end = a ;
+        }
+        arr[i].start = start;
+        arr[i].end = end;
+        arr[i].start_index = 1 ;
+        arr[i].end_index = -1 ;
+
+    }
+
+
+    sort(arr, arr+N , compare_pine);
+    int  result[arr[N-1]] ;
+    cout << result[0];
+
+
+    
+    return 0;
+}
